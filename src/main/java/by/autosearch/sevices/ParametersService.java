@@ -15,8 +15,9 @@ public class ParametersService {
         this.parametersRepository = parametersRepository;
     }
 
-    public void setBrand(String brand) {
-        parametersRepository.save(new Brand(null, brand));
+    public void setBrand(Brand brand) {
+
+        parametersRepository.save(brand);
     }
 
     public void setModel(String model) {
