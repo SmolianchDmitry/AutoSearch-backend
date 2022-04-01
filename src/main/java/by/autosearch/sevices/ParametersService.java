@@ -1,26 +1,34 @@
 package by.autosearch.sevices;
 
 import by.autosearch.entities.Brand;
-import by.autosearch.repositories.ParametersRepository;
+import by.autosearch.entities.Model;
+import by.autosearch.repositories.BrandRepository;
+import by.autosearch.repositories.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ParametersService {
 
-    ParametersRepository parametersRepository;
+    BrandRepository brandRepository;
+    ModelRepository modelRepository;
 
     @Autowired
-    public ParametersService(ParametersRepository parametersRepository) {
-        this.parametersRepository = parametersRepository;
+
+    public ParametersService(BrandRepository brandRepository, ModelRepository modelRepository) {
+        this.brandRepository = brandRepository;
+        this.modelRepository = modelRepository;
     }
+
+
 
     public void setBrand(Brand brand) {
 
-        parametersRepository.save(brand);
+        brandRepository.save(brand);
     }
 
-    public void setModel(String model) {
+    public void setModel(Model model) {
+        modelRepository.save(model);
 
     }
 
