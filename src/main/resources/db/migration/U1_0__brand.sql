@@ -1,2 +1,0 @@
-DROP TABLE model;
-DROP TABLE brand;
